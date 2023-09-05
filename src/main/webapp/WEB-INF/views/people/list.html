@@ -7,7 +7,7 @@
 <body>
 <!--Show full list in db-->
 <div th:each="person : ${people}">
-    <a th:href="@{/people/{id}(id=${person.getId()})}"
+    <a th:href="@{/people/{id}(id=${person.getPerson_id()})}"
        th:text="${person.getFullName() + ', ' + person.getAge()}">user
     </a>
 </div>

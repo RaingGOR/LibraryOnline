@@ -1,25 +1,26 @@
 package ru.Raingor.models;
 
 public class Person {
-    private int id;
+    private int person_id;
     private String fullName;
     private String age;
 
     public Person() {
     }
 
-    public Person(int id, String fullName, String yearOfBirth) {
-        this.id = id;
+    public Person(int person_id, String fullName, String age) {
+        this.person_id = person_id;
         this.fullName = fullName;
-        this.age = yearOfBirth;
+        this.age = age;
     }
 
-    public int getId() {
-        return id;
+
+    public int getPerson_id() {
+        return person_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPerson_id(int person_id) {
+        this.person_id = person_id;
     }
 
     public String getFullName() {
@@ -34,7 +35,7 @@ public class Person {
         return age;
     }
 
-    public void setAge(String yearOfBirth) {
-        this.age = yearOfBirth;
+    public void setAge(String age) {
+        this.age = age;
     }
 }
