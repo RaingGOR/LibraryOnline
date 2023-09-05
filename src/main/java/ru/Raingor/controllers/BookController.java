@@ -13,15 +13,16 @@ import ru.Raingor.models.Book;
 @Controller
 @RequestMapping("/books")
 public class BookController {
-
     private final BookDao bookDao;
-
+    private final PersonDAO personDAO;
 
     @Autowired
-    public BookController(BookDao bookDao) {
+    public BookController(BookDao bookDao, PersonDAO personDAO) {
         this.bookDao = bookDao;
+        this.personDAO = personDAO;
     }
 
+    //checked * work *
     @GetMapping()
     public String index(Model model) {
         // get full peoples in DAO and pass to the display
@@ -31,7 +32,6 @@ public class BookController {
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        // get one person with id in DAO and pass to display
         model.addAttribute("book", bookDao.show(id));
         return "books/show";
     }
@@ -66,6 +66,7 @@ public class BookController {
         if (bindingResult.hasErrors()) {
             return "books/edit";
         }
+
         bookDao.update(id, book);
         return "redirect:/books";
     }

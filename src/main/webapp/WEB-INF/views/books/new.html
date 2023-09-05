@@ -7,23 +7,19 @@
 <body>
 
 <form th:method="POST" th:action="@{/books}" th:object="${book}">
-
-    <label for="Title">Enter Title: </label>
-    <input type="text" th:field="*{title}" id="Title"/>
-    <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"> Error</div>
+    <label for="title">Введите название книги: </label>
+    <input type="text" th:field="*{title}" id="title"/>
+    <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</div>
     <br/>
-
-    <label for="Author">Enter Author: </label>
-    <input type="text" th:field="*{author}" id="Author"/>
-    <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"> Error</div>
+    <label for="author">Введите автора: </label>
+    <input type="text" th:field="*{author}" id="author"/>
+    <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</div>
     <br/>
-
-    <label for="Year">Enter Year: </label>
-    <input type="text" th:field="*{year}" id="Year"/>
-    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"> Error</div>
+    <label for="year">Введите год: </label>
+    <input type="text" th:field="*{year}" id="year"/>
+    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</div>
     <br/>
-
-    <input type="submit" value="Create!"/>
+    <input type="submit" value="Создать!"/>
 </form>
 
 </body>

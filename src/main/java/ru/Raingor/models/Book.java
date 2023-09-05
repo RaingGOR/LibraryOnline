@@ -1,43 +1,27 @@
 package ru.Raingor.models;
 
 public class Book {
-    private int book_id;
-    private int person_id = 1;
+    private int id;
     private String title;
     private String author;
     private int year;
 
-    public Book(int book_id, int person_id, String title, String author, int year) {
-        this.book_id = book_id;
-        this.person_id = person_id;
+    public Book(int id, String title, String author, int year) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.year = year;
     }
-    public Book(int book_id, String title, String author, int year) {
-        this.book_id = book_id;
-        this.title = title;
-        this.author = author;
-        this.year = year;
-    }
+
     public Book() {
-
     }
 
-    public int getBook_id() {
-        return book_id;
+    public int getId() {
+        return id;
     }
 
-    public void setBook_id(int book_id) {
-        this.book_id = book_id;
-    }
-
-    public int getPerson_id() {
-        return person_id;
-    }
-
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
