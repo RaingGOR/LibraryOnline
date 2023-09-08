@@ -41,7 +41,17 @@ public class BookDao {
     }
 
     public void setBook(int person_id, int book_id) {
-        jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?",person_id,book_id);
+        jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", person_id, book_id);
     }
 
+    public boolean havePerson(int bookId) {
+        String sql = "SELECT person_id FROM book WHERE id = ?";
+        Integer personId = jdbcTemplate.queryForObject(sql, Integer.class, bookId);
+
+        return personId == null;
+    }
+
+    public void dellPersId(int id) {
+        jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", null, id);
+    }
 }

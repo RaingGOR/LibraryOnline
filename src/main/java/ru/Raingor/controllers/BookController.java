@@ -37,12 +37,21 @@ public class BookController {
     public String show(@PathVariable("id") int id, Model model,@ModelAttribute("person") Person person) {
         model.addAttribute("book", bookDao.show(id));
         model.addAttribute("people", personDAO.fullShow());
+        model.addAttribute("isEmpty", bookDao.havePerson(id));
+        model.addAttribute("person1", personDAO.showPerson(id));
+
         return "books/show";
     }
 
     @PatchMapping("/{id}/add")
     public String setBook(@ModelAttribute("person") Person person, @PathVariable("id") int book_id) {
         bookDao.setBook(person.getPerson_id(),book_id);
+        return "redirect:/books";
+    }
+
+    @PatchMapping("/{id}/del")
+    public String delPersonId( @PathVariable("id") int book_id){
+        bookDao.dellPersId(book_id);
         return "redirect:/books";
     }
 
