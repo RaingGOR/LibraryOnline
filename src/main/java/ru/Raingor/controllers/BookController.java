@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.Raingor.dao.BookDao;
 import ru.Raingor.dao.PersonDAO;
 import ru.Raingor.models.Book;
+import ru.Raingor.models.Person;
 
 @Controller
 @RequestMapping("/books")
@@ -24,16 +25,25 @@ public class BookController {
 
     //checked * work *
     @GetMapping()
-    public String index(Model model) {
+    public String index(Model model, @ModelAttribute("person") Person person) {
         // get full peoples in DAO and pass to the display
         model.addAttribute("books", bookDao.index());
+        model.addAttribute("people", personDAO.fullShow());
+
         return "books/index";
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model) {
+    public String show(@PathVariable("id") int id, Model model,@ModelAttribute("person") Person person) {
         model.addAttribute("book", bookDao.show(id));
+        model.addAttribute("people", personDAO.fullShow());
         return "books/show";
+    }
+
+    @PatchMapping("/{id}/add")
+    public String setBook(@ModelAttribute("person") Person person, @PathVariable("id") int book_id) {
+        bookDao.setBook(person.getPerson_id(),book_id);
+        return "redirect:/books";
     }
 
     @GetMapping("/new")
@@ -76,5 +86,6 @@ public class BookController {
         bookDao.delete(id);
         return "redirect:/books";
     }
+
 }
 
