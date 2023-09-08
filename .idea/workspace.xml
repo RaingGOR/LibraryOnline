@@ -9,17 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d86a8f6-c728-437f-ba44-bfbf042cdaec" name="Changes" comment="With book bug, create a new BD + add one book in table book and u see a bug. If table is void - web work">
+    <list default="true" id="5d86a8f6-c728-437f-ba44-bfbf042cdaec" name="Changes" comment="Create class Book. All bugs with him closed. I can!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/config/MySpringMvcDispetcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/config/MySpringMvcDispetcherServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sql/sqlProperties.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/sqlProperties.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +180,9 @@
       <workItem from="1693584939698" duration="253000" />
       <workItem from="1693831330938" duration="11737000" />
       <workItem from="1693934647943" duration="1147000" />
-      <workItem from="1693938833051" duration="3143000" />
+      <workItem from="1693938833051" duration="4986000" />
+      <workItem from="1694027326303" duration="706000" />
+      <workItem from="1694161110876" duration="1863000" />
     </task>
     <task id="LOCAL-00001" summary="Add function Person.&#10;Create model Person,Controller for Person, Table for Person.">
       <option name="closed" value="true" />
@@ -204,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693935473094</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create class Book. All bugs with him closed. I can!">
+      <option name="closed" value="true" />
+      <created>1693942401482</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693942401482</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add function Person.&#10;Create model Person,Controller for Person, Table for Person." />
     <MESSAGE value="With book bug, create a new BD + add one book in table book and u see a bug. If table is void - web work" />
-    <option name="LAST_COMMIT_MESSAGE" value="With book bug, create a new BD + add one book in table book and u see a bug. If table is void - web work" />
+    <MESSAGE value="Create class Book. All bugs with him closed. I can!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create class Book. All bugs with him closed. I can!" />
   </component>
 </project>
