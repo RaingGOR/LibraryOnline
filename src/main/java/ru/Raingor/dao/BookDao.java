@@ -40,10 +40,12 @@ public class BookDao {
         jdbcTemplate.update("DELETE FROM Book WHERE id=?", id);
     }
 
+    //set book by person
     public void setBook(int person_id, int book_id) {
         jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", person_id, book_id);
     }
 
+    //check null or not null
     public boolean havePerson(int bookId) {
         String sql = "SELECT person_id FROM book WHERE id = ?";
         Integer personId = jdbcTemplate.queryForObject(sql, Integer.class, bookId);
@@ -51,7 +53,12 @@ public class BookDao {
         return personId == null;
     }
 
+    //delete "set book"
     public void dellPersId(int id) {
         jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", null, id);
+    }
+
+    public List<Book> showBooks(int id){
+        return jdbcTemplate.query("select * FROM book WHERE person_id=?",new Object[]{id}, new BeanPropertyRowMapper<>(Book.class));
     }
 }

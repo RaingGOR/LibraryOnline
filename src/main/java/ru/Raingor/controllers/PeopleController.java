@@ -6,17 +6,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.Raingor.dao.BookDao;
 import ru.Raingor.dao.PersonDAO;
+import ru.Raingor.models.Book;
 import ru.Raingor.models.Person;
 
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
     private final PersonDAO personDAO;
+    private final BookDao bookDao;
 
     @Autowired
-    public PeopleController(PersonDAO personDAO) {
+    public PeopleController(PersonDAO personDAO, BookDao bookDao) {
         this.personDAO = personDAO;
+        this.bookDao = bookDao;
     }
 
     //show
@@ -27,9 +31,11 @@ public class PeopleController {
     }
 
     @GetMapping("/{person_id}")
-    public String showPerson(@PathVariable("person_id") int id, Model model) {
+    public String showPerson(@PathVariable("person_id") int id, Model model,
+                             @ModelAttribute("book") Book book) {
         // get one person with id in DAO and pass to display
         model.addAttribute("person", personDAO.showPerson(id));
+        model.addAttribute("personBooks", bookDao.showBooks(id));
         return "people/show";
     }
 
