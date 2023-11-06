@@ -7,16 +7,16 @@
 <body>
 
 <p th:text="${book.getTitle() + ', '+ book.getAuthor() + ', ' + book.getYear()}">VALUE</p>
-
-<div th:if="${isEmpty}">
+<!--don't use flag isEmpty!! change it to book.getOwner!!! DON"T FORGET PLEASE!-->
+<div th:if="${book.getOwner() == null }">
 
     <p>This book is available.</p>
 
     <form th:method="PATCH" th:action="@{/books/{id}/add (id=${book.getId()})}">
 
         <label for="person">Choose people:</label>
-        <select th:object="${person}" th:field="*{person_id}" id="person">
-            <option th:each="person : ${people}" th:value="${person.getPerson_id()}"
+        <select th:object="${person}" th:field="*{id}" id="person">
+            <option th:each="person : ${people}" th:value="${person.getId()}"
                     th:text="${person.getFullName()}"> value
             </option>
         </select>

@@ -8,27 +8,22 @@
 
 <p th:text="${person.getFullName() + ', ' +  person.getAge()}">Value</p>
 
-<div  th:unless="${personBooks.isEmpty()}">
-
+<div th:unless="${person.getBooks().isEmpty()}">
     <p>Books:</p>
-    <div th:each="book : ${personBooks}">
+    <div th:each="book : ${person.getBooks()}">
         <p th:href="@{/books/{book_id}(book_id=${book.getId()})}"
            th:text="${book.getTitle() + ', ' + book.getAuthor()} + ' '">user</p>
     </div>
-
 </div>
-
-<div th:if="${personBooks.isEmpty()}">
+<div th:if="${person.getBooks().isEmpty()}">
     <a>This man didn't take the book</a>
 </div>
-
 <br/>
 <hr/>
-
-<a th:href="@{/people/{id}/edit(id=${person.getPerson_id()})}">Edit!</a>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit!</a>
 <br/>
 
-<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getPerson_id()})}">
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
 

@@ -1,13 +1,15 @@
 package ru.Raingor.config;
 
+
 import jakarta.servlet.DispatcherType;
 import jakarta.servlet.FilterRegistration;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
 import java.util.EnumSet;
-import org.springframework.web.filter.CharacterEncodingFilter;
 
 public class MySpringMvcDispetcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
@@ -33,7 +35,6 @@ public class MySpringMvcDispetcherServletInitializer extends AbstractAnnotationC
     public void onStartup(ServletContext aServletContext) throws ServletException {
         super.onStartup(aServletContext);
         registerCharacterEncodingFilter(aServletContext);
-
         registerHiddenFieldFilter(aServletContext);
     }
 
@@ -52,4 +53,4 @@ public class MySpringMvcDispetcherServletInitializer extends AbstractAnnotationC
         FilterRegistration.Dynamic characterEncoding = aContext.addFilter("characterEncoding", characterEncodingFilter);
         characterEncoding.addMappingForUrlPatterns(dispatcherTypes, true, "/*");
     }
-}
+}   

@@ -1,5 +1,17 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<p style="text-align:center"><span style="font-family:Courier New,Courier,monospace"><span
+        style="font-size:20px"><strong>Welcome to Library online!</strong></span></span></p>
+
+<p style="text-align:center"><span style="font-family:Courier New,Courier,monospace"><span style="font-size:16px">Library Online web application is your cozy virtual book world. Explore endless pages of literature, find new works and make your reading experience even more convenient. Access the library anytime and from anywhere. Welcome to our virtual library!&nbsp;</span></span>
+</p>
+
+<p><span style="font-family:Courier New,Courier,monospace"><span style="font-size:16px">Library Online is an essential tool for accessing the rich world of literature. It allows users to explore and find books, making reading even more convenient and accessible. With the Library Online web application, users can enjoy reading anytime and from anywhere using only the internet and a browser. 📚🌐</span></span>
+</p>
+<hr/>
+
+<a href="/people"><span style="font-family:Courier New,Courier,monospace">DataBase People</span></a>
+<a href="/books"><span style="font-family:Courier New,Courier,monospace">DataBase books</span></a>
+
 </body>
 </html>

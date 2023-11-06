@@ -2,20 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>People</title>
+    <title>Index</title>
 </head>
 <body>
-<!--Show full list in db-->
+
 <div th:each="person : ${people}">
-    <a th:href="@{/people/{id}(id=${person.getPerson_id()})}"
-       th:text="${person.getFullName() + ', ' + person.getAge()}">user
-    </a>
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getFullName() + ', ' + person.getAge()}">user</a>
 </div>
 
 <br/>
 <hr/>
 
-<!--Add "Create new Person"-->
 <a href="/people/new">Create new person</a>
 
 </body>

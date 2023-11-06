@@ -6,27 +6,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.Raingor.dao.BookDao;
-import ru.Raingor.dao.PersonDAO;
 import ru.Raingor.models.Book;
 import ru.Raingor.models.Person;
+import ru.Raingor.service.BookService;
+import ru.Raingor.service.PersonService;
 
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
-    private final PersonDAO personDAO;
-    private final BookDao bookDao;
+    private final PersonService personService;
+    private final BookService bookService;
 
     @Autowired
-    public PeopleController(PersonDAO personDAO, BookDao bookDao) {
-        this.personDAO = personDAO;
-        this.bookDao = bookDao;
+    public PeopleController(PersonService personService, BookService bookService) {
+        this.personService = personService;
+        this.bookService = bookService;
     }
+
 
     //show
     @GetMapping()
     public String showFullList(Model model) {         // get full peoples in DAO and pass to the display
-        model.addAttribute("people", personDAO.fullShow());
+        model.addAttribute("people", personService.findAll());
         return "people/list";
     }
 
@@ -34,8 +35,7 @@ public class PeopleController {
     public String showPerson(@PathVariable("person_id") int id, Model model,
                              @ModelAttribute("book") Book book) {
         // get one person with id in DAO and pass to display
-        model.addAttribute("person", personDAO.showPerson(id));
-        model.addAttribute("personBooks", bookDao.showBooks(id));
+        model.addAttribute("person", personService.findOne(id));
         return "people/show";
     }
 
@@ -54,7 +54,8 @@ public class PeopleController {
             return "people/new";
         }
 
-        personDAO.save(person);
+
+        personService.savePerson(person);
 
         return "redirect:/people";
     }
@@ -62,7 +63,7 @@ public class PeopleController {
     //edit
     @GetMapping("/{person_id}/edit")
     public String edit(Model model, @PathVariable("person_id") int id) {
-        model.addAttribute("person", personDAO.showPerson(id));
+        model.addAttribute("person", personService.findOne(id));
         return "people/edit";
     }
 
@@ -72,8 +73,7 @@ public class PeopleController {
         if (bindingResult.hasErrors()) {
             return "people/edit";
         }
-
-        personDAO.edit(id, person);
+        personService.updatePerson(id, person);
 
         return "redirect:/people";
     }
@@ -81,7 +81,7 @@ public class PeopleController {
     //delete
     @DeleteMapping("/{person_id}")
     public String delete(@PathVariable("person_id") int id) {
-        personDAO.delete(id);
+        personService.deletePerson(id);
         return "redirect:/people";
     }
 }
