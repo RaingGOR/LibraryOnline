@@ -44,17 +44,17 @@ public class BookController {
     }
 
     //add owner
-//    @PatchMapping("/{id}/add")
-//    public String setBook(@ModelAttribute("person") Person person, @PathVariable("id") int book_id) {
-//        bookDao.setBook(person.getPerson_id(),book_id);
-//        return "redirect:/books";
-//    }
-//
-//    @PatchMapping("/{id}/del")
-//    public String delPersonId(@PathVariable("id") int book_id) {
-//        bookDao.dellPersId(book_id);
-//        return "redirect:/books";
-//    }
+    @PatchMapping("/{id}/add")
+    public String setBook(@ModelAttribute("person") Person person, @PathVariable("id") int book_id) {
+        bookService.setBook(person, book_id);
+        return "redirect:/books";
+    }
+
+    @PatchMapping("/{id}/del")
+    public String delPersonId(@PathVariable("id") int book_id) {
+        bookService.dellPersId(book_id);
+        return "redirect:/books";
+    }
 
     //add new book
     @GetMapping("/new")

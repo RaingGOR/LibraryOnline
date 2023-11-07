@@ -7,7 +7,7 @@
 <body>
 
 <p th:text="${book.getTitle() + ', '+ book.getAuthor() + ', ' + book.getYear()}">VALUE</p>
-<!--don't use flag isEmpty!! change it to book.getOwner!!! DON"T FORGET PLEASE!-->
+
 <div th:if="${book.getOwner() == null }">
 
     <p>This book is available.</p>
@@ -25,8 +25,7 @@
     </form>
 
 </div>
-
-<div th:unless="${isEmpty}">
+<div th:unless="${book.getOwner() == null}">
 
     <form th:method="PATCH" th:action="@{/books/{id}/del (id=${book.getId()})}">
         <p th:text="${person1.getFullName()}">VALUE</p>
@@ -40,6 +39,7 @@
 <form>
     <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>
 </form>
+<a href="/books">Return main</a>
 
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
     <input type="submit" value="Delete"/>

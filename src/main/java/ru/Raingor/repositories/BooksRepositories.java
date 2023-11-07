@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface BooksRepositories extends JpaRepository<Book, Integer> {
     public List<Book> findByOwner(Person owner);
+
+
 }
