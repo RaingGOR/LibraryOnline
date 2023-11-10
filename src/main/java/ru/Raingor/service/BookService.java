@@ -2,6 +2,7 @@ package ru.Raingor.service;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ public class BookService {
 
     public Book findOne(int id) {
         Optional<Book> book = booksRepositories.findById(id);
+        Hibernate.initialize(book.get().getOwner());
         return book.orElse(null);
     }
 

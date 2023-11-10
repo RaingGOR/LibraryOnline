@@ -9,15 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d86a8f6-c728-437f-ba44-bfbf042cdaec" name="Changes" comment="Update project&#10;I update methods with JPA and Hibernate. Now I don't use DAO.&#10;Full work Person. Update DataBase.&#10;Next Step: Update book site">
+    <list default="true" id="5d86a8f6-c728-437f-ba44-bfbf042cdaec" name="Changes" comment="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/repositories/BooksRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/repositories/BooksRepositories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/PersonService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +191,9 @@
       <workItem from="1699357325995" duration="63000" />
       <workItem from="1699357551747" duration="71000" />
       <workItem from="1699358290691" duration="72000" />
-      <workItem from="1699375031373" duration="3885000" />
+      <workItem from="1699375031373" duration="7866000" />
+      <workItem from="1699538178864" duration="243000" />
+      <workItem from="1699605255829" duration="1333000" />
     </task>
     <task id="LOCAL-00001" summary="add set book and liberate">
       <option name="closed" value="true" />
@@ -213,7 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699291452192</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update mvc project 1.1&#10;You again can give and  books Liberate.">
+      <option name="closed" value="true" />
+      <created>1699379794455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699379794455</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md">
+      <option name="closed" value="true" />
+      <created>1699383150789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699383150789</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +247,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add set book and liberate" />
     <MESSAGE value="Update project&#10;I update methods with JPA and Hibernate. Now I don't use DAO.&#10;Full work Person. Update DataBase.&#10;Next Step: Update book site" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update project&#10;I update methods with JPA and Hibernate. Now I don't use DAO.&#10;Full work Person. Update DataBase.&#10;Next Step: Update book site" />
+    <MESSAGE value="Update mvc project 1.1&#10;You again can give and  books Liberate." />
+    <MESSAGE value="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md" />
   </component>
 </project>

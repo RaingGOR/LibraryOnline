@@ -1,5 +1,6 @@
 package ru.Raingor.service;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +28,7 @@ public class PersonService {
 
     public Person findOne(int id) {
         Optional<Person> person = peopleRepositories.findById(id);
-        person.orElse(null).getBooks();
+        Hibernate.initialize(person.get().getBooks());
         return person.orElse(null);
     }
 
