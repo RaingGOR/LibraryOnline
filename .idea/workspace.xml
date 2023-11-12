@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d86a8f6-c728-437f-ba44-bfbf042cdaec" name="Changes" comment="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md">
+    <list default="true" id="5d86a8f6-c728-437f-ba44-bfbf042cdaec" name="Changes" comment="Update project 1.3&#10;*optimization requests hibernate">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/repositories/BooksRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/repositories/BooksRepositories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Raingor/service/PersonService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,9 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;218ba01888cd2cc8dadb8228f66aa03e&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -193,7 +197,10 @@
       <workItem from="1699358290691" duration="72000" />
       <workItem from="1699375031373" duration="7866000" />
       <workItem from="1699538178864" duration="243000" />
-      <workItem from="1699605255829" duration="1333000" />
+      <workItem from="1699605255829" duration="9123000" />
+      <workItem from="1699641169501" duration="5333000" />
+      <workItem from="1699710824714" duration="6816000" />
+      <workItem from="1699797137344" duration="3307000" />
     </task>
     <task id="LOCAL-00001" summary="add set book and liberate">
       <option name="closed" value="true" />
@@ -227,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699383150789</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update project 1.3&#10;*optimization requests hibernate">
+      <option name="closed" value="true" />
+      <created>1699606890132</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699606890133</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +264,11 @@
     <MESSAGE value="Update project&#10;I update methods with JPA and Hibernate. Now I don't use DAO.&#10;Full work Person. Update DataBase.&#10;Next Step: Update book site" />
     <MESSAGE value="Update mvc project 1.1&#10;You again can give and  books Liberate." />
     <MESSAGE value="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update mvc project 1.2&#10;*Little optimization&#10;*Add lombok&#10;*Add description in README.md" />
+    <MESSAGE value="Update project 1.3&#10;*optimization requests hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update project 1.3&#10;*optimization requests hibernate" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

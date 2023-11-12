@@ -1,9 +1,8 @@
 package ru.Raingor.service;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.Raingor.models.Book;
@@ -12,7 +11,6 @@ import ru.Raingor.repositories.BooksRepositories;
 import ru.Raingor.repositories.PeopleRepositories;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +30,10 @@ public class BookService {
         return booksRepositories.findAll();
     }
 
+    public List<Book> findAll(int page, int books_per_page) {
+        return booksRepositories.findAll(PageRequest.of(page, books_per_page)).getContent();
+    }
+
     public Book findOne(int id) {
         Optional<Book> book = booksRepositories.findById(id);
         Hibernate.initialize(book.get().getOwner());
@@ -46,6 +48,7 @@ public class BookService {
     @Transactional
     public void updateBook(int id, Book book) {
         book.setId(id);
+        book.setOwner(peopleRepositories.findById(id).orElse(null));
         booksRepositories.save(book);
     }
 
@@ -66,12 +69,15 @@ public class BookService {
         booksRepositories.save(book);
     }
 
-    //error method
     @Transactional
     public void dellPersId(int id) {
         Book book = booksRepositories.findById(id).orElseThrow(() -> new RuntimeException("Not found book, how???"));
         book.getOwner().getBooks().remove(book);
         book.setOwner(null);
         booksRepositories.save(book);
+    }
+
+    public List<Book> findByTitleStartWith(String startWith) {
+        return booksRepositories.findByTitleStartingWith(startWith);
     }
 }

@@ -25,7 +25,7 @@ public class PeopleController {
 
 
     //show
-    @GetMapping()
+    @GetMapping
     public String showFullList(Model model) {         // get full peoples in DAO and pass to the display
         model.addAttribute("people", personService.findAll());
         return "people/list";

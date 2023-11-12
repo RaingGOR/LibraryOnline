@@ -11,6 +11,7 @@ import ru.Raingor.models.Person;
 import ru.Raingor.service.BookService;
 import ru.Raingor.service.PersonService;
 
+
 @Controller
 @RequestMapping("/books")
 public class BookController {
@@ -25,10 +26,17 @@ public class BookController {
 
 
     //show
-    @GetMapping()
-    public String index(Model model, @ModelAttribute("person") Person person) {
-        // get full peoples in DAO and pass to the display
-        model.addAttribute("books", bookService.findAll());
+    @GetMapping
+    public String index(Model model, @ModelAttribute("person") Person person,
+                        @RequestParam(value = "page", required = false, defaultValue = "0") Integer page,
+                        @RequestParam(value = "books_per_page", required = false, defaultValue = "0") Integer books_per_page
+    ) {
+        // get full peoples in book service (DAO <- old method) and pass to the display
+        if (books_per_page == 0) {
+            model.addAttribute("books", bookService.findAll());
+        } else {
+            model.addAttribute("books", bookService.findAll(page, books_per_page));
+        }
         model.addAttribute("people", personService.findAll());
 
         return "books/index";
@@ -98,6 +106,19 @@ public class BookController {
         bookService.deleteBook(id);
         return "redirect:/books";
     }
+
+    // search
+    @GetMapping("/search")
+    public String searchPage() {
+        return "books/search";
+    }
+
+    @PostMapping("/search")
+    public String makeSearch(Model model,@RequestParam("query") String query){
+        model.addAttribute("books", bookService.findByTitleStartWith(query));
+        return "books/search";
+    }
+
 
 }
 
